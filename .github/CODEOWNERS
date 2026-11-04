@@ -1,0 +1,9 @@
+# Troque @usuario-* pelos usuarios reais do GitHub do grupo.
+# A ultima regra que casar vence.
+*                @usuario-dev1
+/apps/portal/    @usuario-dev1 @usuario-dev2
+/apps/api/       @usuario-dev3
+/libs/ui/        @usuario-designer
+# Prompts de agentes: revisor obrigatorio (inspirado na aprovacao semantica do Antique)
+/prompts/        @usuario-dev4
+/.github/        @usuario-dev1

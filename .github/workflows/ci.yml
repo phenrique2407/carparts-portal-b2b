@@ -1,0 +1,19 @@
+name: ci
+on:
+  pull_request:
+    paths: ['apps/portal/**', 'libs/ui/**', '.github/workflows/ci.yml']
+  merge_group:          # obrigatorio para a merge queue
+  workflow_dispatch:    # permite repetir a medicao a mao
+jobs:
+  test-portal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout enxuto
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            apps/portal
+            libs/ui
+      - run: npm test --prefix apps/portal
+      - run: npm test --prefix libs/ui
